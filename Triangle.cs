@@ -18,8 +18,9 @@ namespace Tund
             b = B;
             c = C;
         }
-        public Triangle(double H)
+        public Triangle(double H, double B)
         {
+            b = B;
             h = H;
         }
         public string outputA() // выводим сторону а, данный метод возвращает строковое значение
