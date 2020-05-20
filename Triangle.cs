@@ -11,11 +11,16 @@ namespace Tund
         public double a; // первая сторона
         public double b; // вторая сторона
         public double c; // третья сторона
+        public double h; // высота
         public Triangle(double A, double B, double C)
         {
             a = A;
             b = B;
             c = C;
+        }
+        public Triangle(double H)
+        {
+            h = H;
         }
         public string outputA() // выводим сторону а, данный метод возвращает строковое значение
         {
@@ -28,6 +33,12 @@ namespace Tund
         public string outputC()
         {
             return Convert.ToString(c);
+        }
+        public double AreaOfTriangle() // нахождение площади
+        {
+            double S = 0;
+            S = 1 / 2 * b * h;
+            return S;
         }
         public double Perimeter() // сумма всех сторон типо double
         {
@@ -64,13 +75,22 @@ namespace Tund
             set
             { c = value; }
         }
-        public bool ExistTriangle // свойство позволяющее установить, существует ои треугольник с задаными сторонами
+        public bool ExistTriangle // свойство позволяющее установить, существует ли треугольник с задаными сторонами
         {
             get
             {
                 if ((a > b + c) && (b > a + c) && (c > a + b)) //сумма 2 сторон должна быть больше третьей
                     return false;
                 else return true;
+            }
+        }
+        public bool EquilateralTriangle // выяснение равносторонний треугольник
+        {
+            get
+            {
+                if ((a == b) || (a == c) || (b == c))
+                    return true;
+                else return false;
             }
         }
     }
