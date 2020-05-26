@@ -81,8 +81,8 @@ namespace Tund
             get
             {
                 if ((a > b + c) && (b > a + c) && (c > a + b)) //сумма 2 сторон должна быть больше третьей
-                    return false;
-                else return true;
+                    return true;
+                else return false;
             }
         }
         public bool EquilateralTriangle // выяснение равносторонний треугольник
