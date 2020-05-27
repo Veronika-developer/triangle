@@ -51,9 +51,9 @@
             this.Run_Button.FlatAppearance.BorderSize = 10;
             this.Run_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Run_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Run_Button.Location = new System.Drawing.Point(532, 250);
+            this.Run_Button.Location = new System.Drawing.Point(514, 250);
             this.Run_Button.Name = "Run_Button";
-            this.Run_Button.Size = new System.Drawing.Size(223, 91);
+            this.Run_Button.Size = new System.Drawing.Size(241, 91);
             this.Run_Button.TabIndex = 0;
             this.Run_Button.Text = "Запуск";
             this.Run_Button.UseVisualStyleBackColor = false;
@@ -86,12 +86,12 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "Поле";
-            this.columnHeader1.Width = 56;
+            this.columnHeader1.Width = 102;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Значение";
-            this.columnHeader2.Width = 89;
+            this.columnHeader2.Width = 116;
             // 
             // txtA
             // 

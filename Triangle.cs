@@ -80,7 +80,7 @@ namespace Tund
         {
             get
             {
-                if ((a > b + c) && (b > a + c) && (c > a + b)) //сумма 2 сторон должна быть больше третьей
+                if ((a < b + c) && (b < a + c) && (c < a + b)) //сумма 2 сторон должна быть больше третьей
                     return true;
                 else return false;
             }
@@ -93,6 +93,24 @@ namespace Tund
                     return true;
                 else return false;
             }
+        }
+
+        public string TypeOfTriangle()//определение типа треугольника
+        {
+            string answer;
+            if ((a * a == b * b + c * c) && (b * b == c * c + a * a) && (c * c == a * a + b * b))
+            {
+                answer = "прямоугольный";
+            }
+            else if ((a * a > b * b + c * c) && (c * c > a * a + b * b) && (b * b > a * a + c * c))
+            {
+                answer = "тупоугольный";
+            }
+            else
+            {
+                answer = "остроугольный";
+            }
+            return answer;
         }
     }
 }

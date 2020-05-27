@@ -38,6 +38,7 @@ namespace Tund
             ListView.Items[4].SubItems.Add(Convert.ToString(triangle.Surface()));
             if (triangle.ExistTriangle) { ListView.Items[5].SubItems.Add("Существует"); }
             else ListView.Items[5].SubItems.Add("Не существует");
+            ListView.Items[6].SubItems.Add(triangle.TypeOfTriangle());
         }
 
     }
