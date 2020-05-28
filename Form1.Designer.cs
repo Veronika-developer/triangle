@@ -58,6 +58,7 @@
             this.Run_Button.Text = "Запуск";
             this.Run_Button.UseVisualStyleBackColor = false;
             this.Run_Button.Click += new System.EventHandler(this.Run_Button_Click);
+            this.Run_Button.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Run_Button_DoubleMouseClick);
             // 
             // pictureBox1
             // 

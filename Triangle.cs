@@ -12,6 +12,7 @@ namespace Tund
         public double b; // вторая сторона
         public double c; // третья сторона
         public double h; // высота
+        public string answer;// тип треугольника
         public Triangle(double A, double B, double C)
         {
             a = A;
@@ -35,9 +36,16 @@ namespace Tund
         {
             return Convert.ToString(c);
         }
+        public double HeightOfTriangle()//нахождение высоты
+        {
+            double p;
+            p = 0.5 * (a + b + c);
+            h = 2 * Math.Sqrt(p * (p - a) * (p - b) * (p - c)) / a;
+            return h;
+        }
         public double AreaOfTriangle() // нахождение площади
         {
-            double S = 0;
+            double S;
             S = 1 / 2 * b * h;
             return S;
         }
@@ -94,15 +102,13 @@ namespace Tund
                 else return false;
             }
         }
-
         public string TypeOfTriangle()//определение типа треугольника
         {
-            string answer;
-            if ((a * a == b * b + c * c) && (b * b == c * c + a * a) && (c * c == a * a + b * b))
+            if ((a * a == b * b + c * c) || (b * b == c * c + a * a) || (c * c == a * a + b * b))
             {
                 answer = "прямоугольный";
             }
-            else if ((a * a > b * b + c * c) && (c * c > a * a + b * b) && (b * b > a * a + c * c))
+            else if ((a * a > b * b + c * c) || (c * c > a * a + b * b) || (b * b > a * a + c * c))
             {
                 answer = "тупоугольный";
             }
@@ -111,6 +117,23 @@ namespace Tund
                 answer = "остроугольный";
             }
             return answer;
+        }
+        public string ImageType()// изменение картинки от TypeOfTriangle
+        {
+            string image = "";
+            if (answer == "тупоугольный") //проверяем условие
+            {
+                image = @"C:\Users\morgo\source\repos\Tund\Images\tupougol.jpg"; //меняем картинку
+            }
+            if (answer == "остроугольный") //проверяем условие
+            {
+                image = @"C:\Users\morgo\source\repos\Tund\Images\ostrii.jpg"; //меняем картинку
+            }
+            if (answer == "прямоугольный") //проверяем условие
+            {
+                image = @"C:\Users\morgo\source\repos\Tund\Images\prjamoi.jpg"; //меняем картинку
+            }
+            return image;
         }
     }
 }

@@ -27,6 +27,7 @@ namespace Tund
             ListView.Items.Add("Сторона а");
             ListView.Items.Add("Сторона b");
             ListView.Items.Add("Сторона c");
+            ListView.Items.Add("Высота");
             ListView.Items.Add("Периметр");
             ListView.Items.Add("Площадь");
             ListView.Items.Add("Существует?");
@@ -34,12 +35,19 @@ namespace Tund
             ListView.Items[0].SubItems.Add(triangle.outputA());
             ListView.Items[1].SubItems.Add(triangle.outputB());
             ListView.Items[2].SubItems.Add(triangle.outputC());
-            ListView.Items[3].SubItems.Add(Convert.ToString(triangle.Perimeter()));
-            ListView.Items[4].SubItems.Add(Convert.ToString(triangle.Surface()));
-            if (triangle.ExistTriangle) { ListView.Items[5].SubItems.Add("Существует"); }
-            else ListView.Items[5].SubItems.Add("Не существует");
-            ListView.Items[6].SubItems.Add(triangle.TypeOfTriangle());
+            ListView.Items[3].SubItems.Add(Convert.ToString(triangle.HeightOfTriangle()));
+            ListView.Items[4].SubItems.Add(Convert.ToString(triangle.Perimeter()));
+            ListView.Items[5].SubItems.Add(Convert.ToString(triangle.Surface()));
+            if (triangle.ExistTriangle) { ListView.Items[6].SubItems.Add("Существует"); }
+            else ListView.Items[6].SubItems.Add("Не существует");
+            ListView.Items[7].SubItems.Add(triangle.TypeOfTriangle());
+            pictureBox1.Image = Image.FromFile(triangle.ImageType());
         }
 
+        private void Run_Button_DoubleMouseClick(object sender, MouseEventArgs e)
+        {
+            Form2 form2 = new Form2();
+            form2.Show();
+        }
     }
 }
