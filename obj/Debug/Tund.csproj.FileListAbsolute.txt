@@ -7,3 +7,4 @@ C:\Users\morgo\source\repos\Tund\bin\Debug\Tund.exe
 C:\Users\morgo\source\repos\Tund\bin\Debug\Tund.pdb
 C:\Users\morgo\source\repos\Tund\obj\Debug\Tund.exe
 C:\Users\morgo\source\repos\Tund\obj\Debug\Tund.pdb
+C:\Users\morgo\source\repos\Tund\obj\Debug\Tund.Form2.resources

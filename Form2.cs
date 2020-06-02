@@ -15,6 +15,12 @@ namespace Tund
         public Form2()
         {
             InitializeComponent();
+
+            for(int i = 0;i<10;i++)
+            {
+                progressBar1.PerformStep();
+            }
+            
         }
     }
 }
