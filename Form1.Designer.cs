@@ -52,7 +52,7 @@
             this.Run_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Run_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Run_Button.Location = new System.Drawing.Point(386, 203);
-            this.Run_Button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Run_Button.Margin = new System.Windows.Forms.Padding(2);
             this.Run_Button.Name = "Run_Button";
             this.Run_Button.Size = new System.Drawing.Size(181, 74);
             this.Run_Button.TabIndex = 0;
@@ -65,7 +65,7 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(399, 10);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(167, 180);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -80,7 +80,7 @@
             this.columnHeader2});
             this.ListView.HideSelection = false;
             this.ListView.Location = new System.Drawing.Point(16, 16);
-            this.ListView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ListView.Margin = new System.Windows.Forms.Padding(2);
             this.ListView.Name = "ListView";
             this.ListView.Size = new System.Drawing.Size(359, 160);
             this.ListView.TabIndex = 2;
@@ -100,7 +100,7 @@
             // txtA
             // 
             this.txtA.Location = new System.Drawing.Point(236, 191);
-            this.txtA.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtA.Margin = new System.Windows.Forms.Padding(2);
             this.txtA.Name = "txtA";
             this.txtA.Size = new System.Drawing.Size(129, 20);
             this.txtA.TabIndex = 3;
@@ -108,7 +108,7 @@
             // txtB
             // 
             this.txtB.Location = new System.Drawing.Point(236, 214);
-            this.txtB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtB.Margin = new System.Windows.Forms.Padding(2);
             this.txtB.Name = "txtB";
             this.txtB.Size = new System.Drawing.Size(129, 20);
             this.txtB.TabIndex = 4;
@@ -116,7 +116,7 @@
             // txtC
             // 
             this.txtC.Location = new System.Drawing.Point(236, 236);
-            this.txtC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtC.Margin = new System.Windows.Forms.Padding(2);
             this.txtC.Name = "txtC";
             this.txtC.Size = new System.Drawing.Size(129, 20);
             this.txtC.TabIndex = 5;
@@ -166,7 +166,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Run_Button);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Работа с треугольником";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

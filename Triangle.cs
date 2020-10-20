@@ -19,6 +19,13 @@ namespace Tund
             b = B;
             c = C;
         }
+        public Triangle(double A, double B, double C, double H)
+        {
+            a = A;
+            b = B;
+            c = C;
+            h = H;
+        }
         public Triangle(double H, double B)
         {
             b = B;
@@ -35,6 +42,10 @@ namespace Tund
         public string outputC()
         {
             return Convert.ToString(c);
+        }
+        public string outputH()
+        {
+            return Convert.ToString(h);
         }
         public double HeightOfTriangle()//нахождение высоты
         {
@@ -60,7 +71,7 @@ namespace Tund
             double s = 0;
             double p = 0;
             p = (a + b + c) / 2;
-            s = Math.Sqrt((p * (p - a) * (p - b) * (p - c)));
+            s = Math.Round(Math.Sqrt((p * (p - a) * (p - b) * (p - c))), 2);
             return s;
         }
         public double GetSetA // свойство позволяющее установить либо изменить значение стороны а
@@ -134,6 +145,18 @@ namespace Tund
                 image = @"C:\Users\morgo\source\repos\Tund\Images\prjamoi.jpg"; //меняем картинку
             }
             return image;
+        }
+        public double mediana()
+        {
+            double m = 0;
+            m = Math.Round((Math.Sqrt(2 * b * b + 2 * c * c - a * a)/ 2),2);
+            return m;
+        }
+        public double bisectrisa()
+        {
+            double bisectrisa;
+            bisectrisa = Math.Round(Math.Sqrt(b * c * ((b + c) * (b + c) - a * a)) / (b + c),2);
+            return bisectrisa;
         }
     }
 }

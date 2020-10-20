@@ -19,4 +19,3 @@ C:\Users\opilane\source\repos\Jefimova\triangle\obj\Debug\Tund.csproj.GenerateRe
 C:\Users\opilane\source\repos\Jefimova\triangle\obj\Debug\Tund.csproj.CoreCompileInputs.cache
 C:\Users\opilane\source\repos\Jefimova\triangle\obj\Debug\Tund.exe
 C:\Users\opilane\source\repos\Jefimova\triangle\obj\Debug\Tund.pdb
-C:\Users\opilane\source\repos\Jefimova\triangle\obj\Debug\Tund.Form3.resources
