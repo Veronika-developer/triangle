@@ -66,6 +66,10 @@ namespace Tund
             p = a + b + c; // вычисление
             return p; // возврат
         }
+        public double PoluPerimeter() // сумма всех сторон типо double
+        {
+            return Perimeter() / 2;
+        }
         public double Surface() // аналогично периметру
         {
             double s = 0;
@@ -157,6 +161,12 @@ namespace Tund
             double bisectrisa;
             bisectrisa = Math.Round(Math.Sqrt(b * c * ((b + c) * (b + c) - a * a)) / (b + c),2);
             return bisectrisa;
+        }
+        public double Sin()
+        {
+            double sinus;
+            sinus = Math.Round((a / c), 2);
+            return sinus;
         }
     }
 }
