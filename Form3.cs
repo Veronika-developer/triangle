@@ -20,42 +20,52 @@ namespace Tund
         PictureBox box;
         RadioButton r1, r2;
         double a, b, c, h;
+        Graphics gp;
+        Pen p = new Pen(Brushes.Black, 2);
         public Form3()
         {
-            this.Size = new Size(310, 470);
+            this.Size = new Size(475, 500);
             this.Text = "Triangle";
             this.BackColor = Color.LightGray;
             this.Icon = new Icon( "pyramid.ico" );
             this.MaximizeBox = false;
 
+            Panel panel1 = new Panel();
+            panel1.Location = new Point(210, 220);
+            panel1.Size = new Size(230,210);
+            panel1.BackColor = Color.White;
+            Controls.Add(panel1);
+
+            gp = panel1.CreateGraphics();
+
             _list = new ListBox();
             _list.Location = new Point(10, 10);
-            _list.Size = new Size(275,200);
+            _list.Size = new Size(440,200);
             _list.BackColor = Color.FromArgb(255, 128, 255);
             Controls.Add(_list);
 
             btn = new Button();
-            btn.Location = new Point(120, 350);
+            btn.Location = new Point(120, 390);
             btn.Size = new Size(80,40);
             btn.Click += Btn_Click;
             btn.Text = "Запуск";
             Controls.Add(btn);
 
             r1 = new RadioButton();
-            r1.Location = new Point(10, 340);
+            r1.Location = new Point(105, 340);
             r1.Text = "Найти высоту";
             r1.CheckedChanged += R1_CheckedChanged;
             Controls.Add(r1);
 
             r2 = new RadioButton();
-            r2.Location = new Point(10, 360);
+            r2.Location = new Point(105, 360);
             r2.Text = "Высота есть";
             r2.CheckedChanged += R2_CheckedChanged;
             Controls.Add(r2);
 
             box = new PictureBox();
-            box.Location = new Point(190, 220);
-            box.Size = new Size(100, 100);
+            box.Location = new Point(9, 340);
+            box.Size = new Size(90, 90);
             box.SizeMode = PictureBoxSizeMode.StretchImage;
             box.ImageLocation = "giphy.gif";
             Controls.Add(box);
@@ -114,6 +124,8 @@ namespace Tund
             item.MenuItems.Add("EXIT", new EventHandler(item_exit));
             menu.MenuItems.Add(item);
             this.Menu = menu;
+
+            r1.Checked = true;
         }
 
         private void R2_CheckedChanged(object sender, EventArgs e)
@@ -126,6 +138,7 @@ namespace Tund
         {
             lH.Visible = false;
             txtH.Visible = false;
+            txtH.Text = "";
         }
 
         private void Btn_Click(object sender, EventArgs e)
@@ -136,20 +149,20 @@ namespace Tund
             int B = rnd.Next(0, 255);
             btn.BackColor = Color.FromArgb(R, G, B);
             _list.Items.Clear();
-            if (txtA.Text == "" || txtB.Text == "" || txtC.Text == "" || txtH.Text == "")
+            if (r1.Checked)
             {
-                a = 0;
-                b = 0;
-                c = 0;
+                a = Convert.ToDouble(txtA.Text);
+                b = Convert.ToDouble(txtB.Text);
+                c = Convert.ToDouble(txtC.Text);
                 h = 0;
             }
             else
             {
-                if (r1.Checked)
+                if (txtA.Text == "" || txtB.Text == "" || txtC.Text == "" || txtH.Text == "")
                 {
-                    a = Convert.ToDouble(txtA.Text);
-                    b = Convert.ToDouble(txtB.Text);
-                    c = Convert.ToDouble(txtC.Text);
+                    a = 0;
+                    b = 0;
+                    c = 0;
                     h = 0;
                 }
                 else
@@ -164,13 +177,51 @@ namespace Tund
             _list.Items.Add("Сторона а:"+ " " + triangle.outputA());
             _list.Items.Add("Сторона b:" + " " + triangle.outputB());
             _list.Items.Add("Сторона c:" + " " + triangle.outputC());
-            _list.Items.Add("Высота:" + " " + triangle.outputH());
+            if (triangle.outputH() == "0")
+            {
+                _list.Items.Add("Высота:" + " " + triangle.HeightOfTriangle());
+            }
+            else
+            {
+                _list.Items.Add("Высота:" + " " + triangle.outputH());
+            }
             _list.Items.Add("Периметр:" + " " + Convert.ToString(triangle.Perimeter()));
             _list.Items.Add("Полупериметр:" + " " + Convert.ToString(triangle.PoluPerimeter()));
             _list.Items.Add("Площадь:" + " " + Convert.ToString(triangle.Surface()));
-            if (triangle.ExistTriangle) { _list.Items.Add("Существует?  Существует"); }
+            if (triangle.ExistTriangle) {_list.Items.Add("Существует?  Существует");}
             else _list.Items.Add("Существует?  Не существует");
             _list.Items.Add("Спецификатор:" + " " + triangle.TypeOfTriangle());
+            gp.Clear(Color.White);
+            if (triangle.TypeOfTriangle() == "прямоугольный")
+            {
+                Point p1 = new Point(70, 150);
+                Point p2 = new Point(155, 30);
+                Point p3 = new Point(70, 30);
+
+                gp.DrawLine(p, p1, p2);
+                gp.DrawLine(p, p2, p3);
+                gp.DrawLine(p, p3, p1);
+            }
+            else if (triangle.TypeOfTriangle() == "остроугольный")
+            {
+                Point p1 = new Point(50, 110);
+                Point p2 = new Point(150, 110);
+                Point p3 = new Point(100, 20);
+
+                gp.DrawLine(p, p1, p2);
+                gp.DrawLine(p, p2, p3);
+                gp.DrawLine(p, p3, p1);
+            }
+            else if (triangle.TypeOfTriangle() == "тупоугольный")
+            {
+                Point p1 = new Point(100, 110);
+                Point p2 = new Point(150, 110);
+                Point p3 = new Point(75, 30);
+
+                gp.DrawLine(p, p1, p2);
+                gp.DrawLine(p, p2, p3);
+                gp.DrawLine(p, p3, p1);
+            }
             _list.Items.Add("Медиана:" + " " + Convert.ToString(triangle.mediana()));
             _list.Items.Add("Биссектриса:" + " " + Convert.ToString(triangle.bisectrisa()));
             _list.Items.Add("Синус угла А:" + " " + Convert.ToString(triangle.Sin()));
@@ -187,6 +238,7 @@ namespace Tund
             txtB.Clear();
             txtC.Clear();
             txtH.Clear();
+            gp.Clear(Color.White);
         }
     }
 }

@@ -51,7 +51,7 @@ namespace Tund
         {
             double p;
             p = 0.5 * (a + b + c);
-            h = 2 * Math.Sqrt(p * (p - a) * (p - b) * (p - c)) / a;
+            h = Math.Round((2 * Math.Sqrt(p * (p - a) * (p - b) * (p - c)) / a),2);
             return h;
         }
         public double AreaOfTriangle() // нахождение площади
