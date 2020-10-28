@@ -186,14 +186,22 @@ namespace Tund
             }
             else
             {
-                if(triangle.outputH() != Convert.ToString(triangle.HeightOfTriangle()))
+                if (triangle.ExistTriangle)
                 {
-                    _list.Items.Add("Высота:" + " " + Convert.ToDouble(txtH.Text) + "(Правильная высота: " + triangle.HeightOfTriangle() + ")");
+                    if (triangle.outputH() != Convert.ToString(triangle.HeightOfTriangle()))
+                    {
+                        _list.Items.Add("Высота:" + " " + Convert.ToDouble(txtH.Text) + "(Правильная высота: " + triangle.HeightOfTriangle() + ")");
+                    }
+                    else
+                    {
+                        _list.Items.Add("Высота:" + " " + triangle.outputH());
+                    }
                 }
                 else
                 {
-                    _list.Items.Add("Высота:" + " " + triangle.outputH());
+                    _list.Items.Add("Высота:" + " 0");
                 }
+                
             }
             _list.Items.Add("Периметр:" + " " + Convert.ToString(triangle.Perimeter()));
             _list.Items.Add("Полупериметр:" + " " + Convert.ToString(triangle.PoluPerimeter()));
