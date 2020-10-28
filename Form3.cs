@@ -91,7 +91,7 @@ namespace Tund
             lH = new Label();
             lH.Size = new Size(70, 30);
             lH.Location = new Point(10, 310);
-            lH.Text = "Сторона H";
+            lH.Text = "Высота H";
             Controls.Add(lH);
 
             txtA = new TextBox();
@@ -177,13 +177,23 @@ namespace Tund
             _list.Items.Add("Сторона а:"+ " " + triangle.outputA());
             _list.Items.Add("Сторона b:" + " " + triangle.outputB());
             _list.Items.Add("Сторона c:" + " " + triangle.outputC());
+            _list.Items.Add("Угол а:" + " " + Convert.ToString(triangle.ugolA()));
+            _list.Items.Add("Угол b:" + " " + Convert.ToString(triangle.ugolB()));
+            _list.Items.Add("Угол c:" + " " + Convert.ToString(triangle.ugolC()));
             if (triangle.outputH() == "0")
             {
                 _list.Items.Add("Высота:" + " " + triangle.HeightOfTriangle());
             }
             else
             {
-                _list.Items.Add("Высота:" + " " + triangle.outputH());
+                if(triangle.outputH() != Convert.ToString(triangle.HeightOfTriangle()))
+                {
+                    _list.Items.Add("Высота:" + " " + Convert.ToDouble(txtH.Text) + "(Правильная высота: " + triangle.HeightOfTriangle() + ")");
+                }
+                else
+                {
+                    _list.Items.Add("Высота:" + " " + triangle.outputH());
+                }
             }
             _list.Items.Add("Периметр:" + " " + Convert.ToString(triangle.Perimeter()));
             _list.Items.Add("Полупериметр:" + " " + Convert.ToString(triangle.PoluPerimeter()));
